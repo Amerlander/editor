@@ -9,6 +9,8 @@
       :visible="dialogVisible"
       icon="mermaid"
       width="960px"
+      :confirm-btn="t('dialog.confirm')"
+      :cancel-btn="t('dialog.cancel')"
       @confirm="setMermaid"
       @close="dialogVisible = false"
     >

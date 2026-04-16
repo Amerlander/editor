@@ -8,6 +8,8 @@
     <modal
       :visible="dialogVisible"
       width="714px"
+      :confirm-btn="t('dialog.confirm')"
+      :cancel-btn="t('dialog.cancel')"
       @confirm="setBarcode"
       @close="dialogVisible = false"
     >

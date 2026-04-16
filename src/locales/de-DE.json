@@ -185,7 +185,7 @@
     "bookmark": {
       "text": "Lesezeichen",
       "set": "Lesezeichen setzen",
-      "ok": "Bestätigt",
+      "ok": "Bestätigen",
       "textName": "Name des Lesezeichens",
       "placeholder": "Bitte geben Sie den Namen des Lesezeichens ein...",
       "show": "Lesezeichen anzeigen",
@@ -323,8 +323,8 @@
       "confirm": "Formel einfügen"
     },
     "diagrams": {
-      "text": "Diagramm",
-      "edit": "Diagramm bearbeiten",
+      "text": "Ablaufplan",
+      "edit": "Ablaufplan bearbeiten",
       "loading": "Wird geladen..."
     },
     "mermaid": {
@@ -676,13 +676,11 @@
     "reset": "Zurücksetzen"
   },
   "about": {
-    "title": "Über Umo Editor",
-    "poweredBy": "Unterstützt von <a href=\"https://www.umodoc.com/en\" target=\"_blank\">Umodoc</a>",
+    "title": "Über den Editor",
     "version": "Version",
     "openSource": "Open-Source-Edition",
-    "documentation": "Dokumentation",
-    "thanks": "Danke an alle Mitwirkenden",
-    "next": "Erfahren Sie mehr über den leistungsstärkeren <a href=\"https://www.umodoc.com/business\" target=\"_blank\">Umo Editor Next</a>"
+    "forkNotice": "Dies ist ein Fork von Umo Editor (umodoc/editor).",
+    "thanks": "Danke an alle Mitwirkenden"
   },
   "layout": {
     "web": "Web-Ansicht",
@@ -793,6 +791,7 @@
     "confirm": "Jetzt drucken"
   },
   "dialog": {
+    "confirm": "Bestätigen",
     "cancel": "Abbrechen"
   },
   "copy": {

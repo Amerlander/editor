@@ -11,6 +11,7 @@
     draggable
     destroy-on-close
     :confirm-btn="t('insert.bookmark.ok')"
+    :cancel-btn="t('dialog.cancel')"
     @confirm="insertBookmark"
     @close="dialogVisible = false"
   >

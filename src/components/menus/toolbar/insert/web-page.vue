@@ -9,6 +9,7 @@
       :visible="dialogVisible"
       width="480px"
       :confirm-btn="t('insert.web.insert')"
+      :cancel-btn="t('dialog.cancel')"
       @confirm="insertWebPage"
       @close="dialogVisible = false"
     >
@@ -88,8 +89,10 @@ const formData = $ref({
 onMounted(() => {
   if (options.value.webPages.length > 0) {
     options.value.webPages.forEach((item) => {
-      item.label = l(item.label)
-      webPages.push(item)
+      webPages.push({
+        ...item,
+        label: l(item.label),
+      })
     })
   }
 })

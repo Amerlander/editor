@@ -493,6 +493,9 @@ locale.value = $locale.value
 consoleCopyright()
 const deConfig = {
   ...enConfig,
+  confirmText: 'Bestätigen',
+  cancelText: 'Abbrechen',
+  resetText: 'Zurücksetzen',
   calendar: {
     ...enConfig.calendar,
     yearSelection: '{year}',

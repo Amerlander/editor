@@ -185,7 +185,7 @@
     "bookmark": {
       "text": "Bookmark",
       "set": "Set bookmarks",
-      "ok": "Confirmed",
+      "ok": "Confirm",
       "textName": "Bookmark name",
       "placeholder": " Please enter the bookmark name...",
       "show": "Show bookmarks",
@@ -323,8 +323,8 @@
       "confirm": "Insert Math"
     },
     "diagrams": {
-      "text": "Diagram",
-      "edit": "Edit Diagram",
+      "text": "Flowchart",
+      "edit": "Edit Flowchart",
       "loading": "Loading..."
     },
     "mermaid": {
@@ -676,13 +676,11 @@
     "reset": "Reset"
   },
   "about": {
-    "title": "About Umo Editor",
-    "poweredBy": "Powered by <a href=\"https://www.umodoc.com/en\" target=\"_blank\">Umodoc</a>",
+    "title": "About Editor",
     "version": "Version",
     "openSource": "open-source edition",
-    "documentation": "Documentation",
-    "thanks": "Thanks to all contributors",
-    "next": "Learn more about the more powerful <a href=\"https://www.umodoc.com/business\" target=\"_blank\">Umo Editor Next</a>"
+    "forkNotice": "This is a fork of Umo Editor (umodoc/editor).",
+    "thanks": "Thanks to all contributors"
   },
   "layout": {
     "web": "Web View",
@@ -790,6 +788,7 @@
     "confirm": "Print Now"
   },
   "dialog": {
+    "confirm": "Confirm",
     "cancel": "Cancel"
   },
   "copy": {

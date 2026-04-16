@@ -2,6 +2,8 @@
   <modal
     :visible="visible"
     width="450px"
+    :confirm-btn="t('dialog.confirm')"
+    :cancel-btn="t('dialog.cancel')"
     @close="emits('close')"
     @confirm="onConfirm"
   >

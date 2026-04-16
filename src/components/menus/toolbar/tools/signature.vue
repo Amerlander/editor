@@ -8,6 +8,8 @@
     <modal
       v-model:visible="dialogVisible"
       width="642px"
+      :confirm-btn="t('dialog.confirm')"
+      :cancel-btn="t('dialog.cancel')"
       @confirm="setSignature"
       @close="dialogVisible = false"
     >
