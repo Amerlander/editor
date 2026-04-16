@@ -1,0 +1,802 @@
+{
+  "welcome": "%cDanke, dass Sie Umo Editor verwenden%cAktuelle Version: v{version}, Weitere Infos: {homepage}",
+  "toolbar": {
+    "ribbon": "Professionell",
+    "classic": "Klassisch",
+    "toggle": "Werkzeugleiste umschalten",
+    "show": "Werkzeugleiste anzeigen",
+    "hide": "Werkzeugleiste ausblenden",
+    "base": "Start",
+    "insert": "Einfügen",
+    "table": "Tabelle",
+    "tools": "Werkzeuge",
+    "page": "Seite",
+    "view": "Ansicht",
+    "export": "Exportieren"
+  },
+  "base": {
+    "align": {
+      "title": "Ausrichtung",
+      "left": "Links",
+      "center": "Zentriert",
+      "right": "Rechts",
+      "justify": "Blocksatz",
+      "distributed": "Verteilt"
+    },
+    "bgColor": "Texthintergrundfarbe",
+    "bold": "Fett",
+    "letterSpacing": {
+      "text": "Zeichenabstand",
+      "tip": "Aktueller Abstand: {value} Zeichen",
+      "reset": "Zeichenabstand zurücksetzen"
+    },
+    "clearFormat": "Textformatierung löschen",
+    "code": "Code",
+    "color": "Schriftfarbe",
+    "fontFamily": {
+      "text": "Schriftart auswählen",
+      "all": "Häufige Schriftarten",
+      "recent": "Zuletzt verwendet",
+      "used": "Verwendete Schriftarten",
+      "unsupport": "Diese Schriftart wird möglicherweise nicht richtig angezeigt, da sie auf diesem Gerät nicht installiert ist."
+    },
+    "fontSize": {
+      "text": "Schriftgröße",
+      "increase": "Schriftgröße vergrößern",
+      "decrease": "Schriftgröße verkleinern",
+      "default": "Standard",
+      "42pt": "Erste",
+      "36pt": "Unter-erste",
+      "26pt": "Erste Ebene",
+      "24pt": "Unter-erste Ebene",
+      "22pt": "Zweite Ebene",
+      "18pt": "Unter-zweite Ebene",
+      "16pt": "Dritte Ebene",
+      "15pt": "Unter-dritte Ebene",
+      "14pt": "Vierte Ebene",
+      "12pt": "Unter-vierte Ebene",
+      "10_5pt": "Fünfte Ebene",
+      "9pt": "Unter-fünfte Ebene",
+      "7_5pt": "Unter-sechste Ebene",
+      "6_5pt": "Standard"
+    },
+    "formatPainter": {
+      "text": "Format übertragen",
+      "tip": "Format übertragen: Doppelklicken zur Wiederverwendung, ESC zum Beenden"
+    },
+    "wordWrap": {
+      "text": "Zeilenumbruch",
+      "normal": "Normal",
+      "breakWord": "Wortumbruch",
+      "breakAll": "Beliebiger Umbruch"
+    },
+    "heading": {
+      "text": "Überschrift {level}",
+      "paragraph": "Standardtext",
+      "tip": "Überschrift festlegen, Inhaltsverzeichnis kann basierend auf Überschriften erstellt werden"
+    },
+    "highlight": {
+      "text": "Hervorheben",
+      "clear": "Hervorhebung löschen",
+      "yellowBg": "Gelber Hintergrund",
+      "purpleBg": "Lila Hintergrund",
+      "greenBg": "Grüner Hintergrund",
+      "blueBg": "Blauer Hintergrund",
+      "red": "Roter Text",
+      "green": "Grüner Text"
+    },
+    "indent": "Einzug vergrößern",
+    "italic": "Kursiv",
+    "lineHeight": {
+      "text": "Zeilenhöhe",
+      "default": " (Standard)"
+    },
+    "outdent": "Einzug verkleinern",
+    "margin": {
+      "text": "Vertikaler Abstand",
+      "top": "Oben",
+      "bottom": "Unten",
+      "default": "Standard",
+      "reset": "Automatischer Abstand"
+    },
+    "markdown": {
+      "text": "Markdown",
+      "enable": "Markdown aktivieren",
+      "disable": "Markdown deaktivieren",
+      "message": "Diese Aktion setzt den Editor zurück. Nach dem Wechsel geht der aktuelle Verlauf verloren und kann nicht rückgängig gemacht werden. Jetzt bestätigen?",
+      "toggle": "Jetzt wechseln"
+    },
+    "quote": "Zitat",
+    "redo": "Wiederholen",
+    "selectAll": "Alles auswählen",
+    "strike": "Durchgestrichen",
+    "subscript": "Tiefgestellt",
+    "superscript": "Hochgestellt",
+    "underline": "Unterstrichen",
+    "undo": "Rückgängig"
+  },
+  "insert": {
+    "audio": "Audio",
+    "codeBlock": "Code-Block",
+    "date": "Datum",
+    "dateOptions": {
+      "customDate": "Benutzerdefiniertes Datum",
+      "customDateTime": "Benutzerdefiniertes Datum und Uhrzeit"
+    },
+    "emoji": "Emoji",
+    "file": "Datei",
+    "hardBreak": "Zeilenumbruch",
+    "hr": {
+      "text": "Trennlinie",
+      "title": "Linienstil",
+      "color": "Linienfarbe",
+      "signle": "Einfache Linie",
+      "double": "Doppelte dünne Linie",
+      "dotted": "Gepunktete Linie",
+      "dashed": "Gestrichelte Linie",
+      "dashedDouble": "Doppelt gestrichelte Linie",
+      "signleBold": "Dicke Linie",
+      "doubleBoldTop": "Dicke & Dünne Linie (Oben)",
+      "doubleBoldBottom": "Dünne & Dicke Linie (Unten)",
+      "wavy": "Wellenlinie"
+    },
+    "option": {
+      "text": "Option",
+      "radio": "Optionsfeld (Radio)",
+      "checkbox": "Kontrollkästchen (Checkbox)",
+      "tip": "Optionstyp",
+      "content": "Optionsinhalt",
+      "add": "Option hinzufügen",
+      "checkall": "Alle auswählen anzeigen",
+      "check": "Alle auswählen",
+      "confirm": "Bestätigen",
+      "cancel": "Abbrechen",
+      "text1": "Option 1",
+      "text2": "Option 2"
+    },
+    "image": {
+      "text": "Bild",
+      "block": "Bild-Block",
+      "blockdesc": "Neuen Bildknoten einfügen",
+      "inline": "Inline-Bild",
+      "inlinedesc": "Inline-Bild in der aktuellen Zeile einfügen"
+    },
+    "link": {
+      "text": "Link",
+      "confirm": "Bestätigen",
+      "remove": "Link entfernen",
+      "hrefText": "Link-Text:",
+      "hrefTextTip": "Link-Text eingeben oder auswählen",
+      "href": "Link-URL:",
+      "hrefTip": "Beginnt meistens mit http:// oder https://",
+      "copy": "Link kopieren",
+      "copySuccess": "Erfolgreich kopiert",
+      "open": "Link öffnen",
+      "edit": "Link bearbeiten"
+    },
+    "details": "Details",
+    "columns": {
+      "text": "Spalten",
+      "number": "Anzahl der Spalten"
+    },
+    "tag": "Tag",
+    "callout": "Hinweisblock",
+    "mention": "Erwähnung",
+    "bookmark": {
+      "text": "Lesezeichen",
+      "set": "Lesezeichen setzen",
+      "ok": "Bestätigt",
+      "textName": "Name des Lesezeichens",
+      "placeholder": "Bitte geben Sie den Namen des Lesezeichens ein...",
+      "show": "Lesezeichen anzeigen",
+      "actions": "Aktionen",
+      "delete": "Lesezeichen löschen",
+      "emptyError": "Bitte geben Sie den Namen des Lesezeichens ein oder wählen Sie ein Lesezeichen aus!"
+    },
+    "symbol": "Symbol",
+    "template": "Vorlage",
+    "textBox": "Textfeld",
+    "toc": "Inhaltsverzeichnis",
+    "video": "Video",
+    "web": {
+      "text": "Webseite",
+      "insert": "Einfügen",
+      "title": "Webseite einfügen",
+      "tip": "Einige Webseiten unterstützen möglicherweise keine Einbettung.",
+      "type": "Link-Typ:",
+      "url": "Seiten-URL:",
+      "placeholder": "Geben Sie eine Webadresse ein, beginnend mit http:// oder https://"
+    },
+    "footnote": "Fußnote"
+  },
+  "table": {
+    "addColumnAfter": "Spalte danach einfügen",
+    "addColumnBefore": "Spalte davor einfügen",
+    "addRowAfter": "Zeile darunter einfügen",
+    "addRowBefore": "Zeile darüber einfügen",
+    "borderColor": "Rahmenfarbe",
+    "cellAlign": {
+      "text": "Ausrichtung",
+      "tip": "Zellenausrichtung",
+      "lt": "Oben Links",
+      "ct": "Oben Zentriert",
+      "rt": "Oben Rechts",
+      "jt": "Oben Blocksatz",
+      "lm": "Mitte Links",
+      "cm": "Mitte Zentriert",
+      "rm": "Mitte Rechts",
+      "jm": "Mitte Blocksatz",
+      "lb": "Unten Links",
+      "cb": "Unten Zentriert",
+      "rb": "Unten Rechts",
+      "jb": "Unten Blocksatz"
+    },
+    "cellBgColor": {
+      "text": "Hintergrund",
+      "tip": "Zellenhintergrundfarbe"
+    },
+    "deleteColumn": {
+      "text": "Spalte löschen",
+      "title": "Tabellenspalte löschen",
+      "message": "Dieser Vorgang löscht die ausgewählte Tabellenspalte. Fortfahren?",
+      "delete": "Jetzt löschen",
+      "success": "Erfolgreich gelöscht"
+    },
+    "deleteRow": {
+      "text": "Zeile löschen",
+      "title": "Tabellenzeile löschen",
+      "message": "Dieser Vorgang löscht die ausgewählte Tabellenzeile. Fortfahren?",
+      "delete": "Jetzt löschen",
+      "success": "Erfolgreich gelöscht"
+    },
+    "delete": {
+      "text": "Tabelle löschen",
+      "title": "Aktuelle Tabelle löschen",
+      "message": "Dieser Vorgang löscht die gesamte ausgewählte Tabelle. Fortfahren?",
+      "delete": "Jetzt löschen",
+      "success": "Erfolgreich gelöscht"
+    },
+    "fix": {
+      "text": "Tabelle reparieren",
+      "tip": "Klicken, um die Tabelle automatisch zu reparieren, falls sie fehlerhaft angezeigt wird"
+    },
+    "insert": {
+      "text": "Tabelle einfügen",
+      "tip": "Neue Tabelle einfügen",
+      "property": "Tabelleneigenschaften",
+      "withHeader": "Mit Kopfzeile",
+      "rows": "Anzahl der Zeilen:",
+      "cols": "Anzahl der Spalten:",
+      "create": "Tabelle erstellen"
+    },
+    "mergeCells": "Zellen verbinden",
+    "nextCell": "Nächste Zelle",
+    "prevCell": "Vorherige Zelle",
+    "splitCell": "Zelle teilen",
+    "toggleHeaderCell": "Kopfzeilen-Zelle",
+    "toggleHeaderRow": "Kopfzeile",
+    "toggleHeaderColumn": "Kopfspalte"
+  },
+  "tools": {
+    "barcode": {
+      "text": "Barcode",
+      "edit": "Barcode bearbeiten",
+      "title": "Barcode",
+      "format": "Format",
+      "font": "Schriftstil",
+      "lineColor": "Farbe von Barcode & Text",
+      "bgColor": "Hintergrundfarbe des Barcodes",
+      "more": "Mehr",
+      "width": "Breite:",
+      "height": "Höhe:",
+      "margin": "Rand:",
+      "displayValue": "Text anzeigen",
+      "displayValueText": "Text einblenden",
+      "textContent": "Textinhalt:",
+      "textContentTip": "Überschreibt den generierten Barcode-Text",
+      "textPosition": "Textposition:",
+      "top": "Oben",
+      "bottom": "Unten",
+      "textMargin": "Vertikaler Abstand:",
+      "fontSize": "Schriftgröße:",
+      "placeholder": "Geben Sie den Inhalt ein, der in einen Barcode konvertiert werden soll",
+      "error": "Ihre Eingabe entspricht möglicherweise nicht den Einschränkungen des aktuellen Barcode-Standards. Bitte überprüfen.",
+      "preview": "Vorschau",
+      "renderError": "Keine Vorschau verfügbar",
+      "notEmpty": "Der Barcode-Inhalt darf nicht leer sein"
+    },
+    "chineseCase": {
+      "text": "Chinesische Groß-/Kleinschreibung",
+      "tip": "Chinesische Groß-/Kleinschreibung konvertieren"
+    },
+    "math": {
+      "text": "Formel",
+      "insert": "LaTeX-Formel einfügen",
+      "edit": "LaTeX-Formel bearbeiten",
+      "update": "Formel aktualisieren",
+      "inline": "Inline-Formel",
+      "block": "Block-Formel",
+      "placeholder": "LaTeX eingeben oder rechts auswählen",
+      "preview": "Formel-Vorschau",
+      "template": "Formel-Vorlagen",
+      "cancel": "Abbrechen",
+      "confirm": "Formel einfügen"
+    },
+    "diagrams": {
+      "text": "Diagramm",
+      "edit": "Diagramm bearbeiten",
+      "loading": "Wird geladen..."
+    },
+    "mermaid": {
+      "text": "Mermaid",
+      "edit": "Mermaid bearbeiten",
+      "theme": "Design auswählen",
+      "themes": {
+        "default": "Standard-Design",
+        "base": "Einfaches Design",
+        "dark": "Dunkles Design",
+        "forest": "Wald-Design",
+        "neutral": "Neutrales Design"
+      },
+      "copy": "Code kopieren",
+      "clear": "Code löschen",
+      "copied": "Code in die Zwischenablage kopiert",
+      "placeholder": "Mermaid-Code eingeben oder einfügen",
+      "preview": "Vorschau",
+      "notEmpty": "Der Mermaid-Inhalt darf nicht leer sein",
+      "codeEmpty": "Der Mermaid-Code darf nicht leer sein",
+      "notLoaded": "Mermaid wird noch geladen",
+      "keepSize": "Originalgröße beibehalten",
+      "renderError": "Syntaxfehler im Diagramm"
+    },
+    "echarts": {
+      "text": "Diagramm",
+      "add": "Neues Diagramm erstellen",
+      "edit": "Diagramm ändern",
+      "source": "Erweiterter Modus",
+      "visualization": "Basis-Modus",
+      "placeholder": "Bitte Daten im Echarts-Format eingeben oder einfügen",
+      "sourceerror": "Echarts-Struktur ist fehlerhaft, bitte überprüfen!",
+      "sourceerror2": "Echarts-Struktur ist fehlerhaft oder undefiniert!",
+      "dataGrid": "Datenraster",
+      "setting": "Einstellungen",
+      "settingError": "Bitte überprüfen Sie, ob die Vorschau korrekt angezeigt wird!",
+      "set": {
+        "bar": "Balken",
+        "line": "Linie",
+        "pie": "Kreis",
+        "top": "Oben",
+        "bottom": "Unten",
+        "left": "Links",
+        "center": "Zentriert",
+        "right": "Rechts",
+        "horizontal": "Horizontal",
+        "vertical": "Vertikal",
+        "smooth": "Glatt",
+        "seriesType": "Diagrammtyp",
+        "legend": "Legende anzeigen",
+        "legendorient": "Legendenlayout",
+        "legendlocation": "Legende vertikal",
+        "legendleft": "Legende horizontal",
+        "titleText": "Diagrammtitel",
+        "titleTextPlaceholder": "Bitte geben Sie einen Titel ein...",
+        "titleleft": "Titelposition"
+      }
+    },
+    "mindMap": "Mindmap",
+    "qrcode": {
+      "text": "QR-Code",
+      "edit": "QR-Code bearbeiten",
+      "level": "Fehlerkorrektur-Level des QR-Codes",
+      "levelL": "Niedrig",
+      "levelM": "Mittel",
+      "levelQ": "Hoch",
+      "levelH": "Sehr hoch",
+      "padding": "Abstand:",
+      "paddingTip": "Weißer Randabstand",
+      "width": "Größe:",
+      "widthTip": "QR-Code-Größe in Pixeln",
+      "color": "QR-Code Farbe",
+      "bgColor": "Hintergrundfarbe",
+      "placeholder": "Inhalt eingeben oder einfügen, der in einen QR-Code konvertiert werden soll",
+      "preview": "Vorschau",
+      "renderError": "Generierung des QR-Codes fehlgeschlagen",
+      "notEmpty": "Der QR-Code-Inhalt darf nicht leer sein"
+    },
+    "signature": {
+      "text": "E-Signatur",
+      "title": "Elektronische Signatur einfügen",
+      "clear": "Leeren",
+      "lineWidth": "Stiftstärke",
+      "lineColor": "Stiftfarbe",
+      "smooth": "Pinselstriche anzeigen",
+      "reset": "Optionen zurücksetzen",
+      "tip": "Bitte unterschreiben Sie in diesem Bereich",
+      "notEmpty": "Keine Signatur erkannt"
+    }
+  },
+  "page": {
+    "bg": {
+      "text": "Hintergrund",
+      "custom": "Benutzerdefinierter Seitenhintergrund",
+      "default": "Standard",
+      "color1": "Augenfreundliches\nGrün",
+      "color2": "Elegantes\nGelb",
+      "color3": "Wolkenblau",
+      "color4": "Himmelblau",
+      "color5": "Dunkles\nSchwarz"
+    },
+    "breakMarks": "Zeilenumbrüche anzeigen",
+    "break": "Seitenumbruch",
+    "lineNumber": "Zeilennummern",
+    "margin": "Seitenränder",
+    "orientation": {
+      "text": "Ausrichtung",
+      "landscape": "Querformat",
+      "portrait": "Hochformat"
+    },
+    "preview": "Präsentation",
+    "size": {
+      "text": "Größe",
+      "cm": "CM",
+      "custom": "Benutzerdefiniert"
+    },
+    "watermark": {
+      "text": "Wasserzeichen",
+      "fontFamily": "Schriftart des Wasserzeichens",
+      "fontSize": "Größe des Wasserzeichens",
+      "fontColor": "Farbe des Wasserzeichens",
+      "content": "Text des Wasserzeichens",
+      "type": "Wasserzeichen-Stil",
+      "compact": "Kompakt",
+      "spacious": "Weitläufig",
+      "clear": "Wasserzeichen entfernen"
+    }
+  },
+  "view": {
+    "zoom": "Zoom",
+    "zoomOriginal": "Originalgröße",
+    "zoomAuto": "Automatische Anpassung",
+    "theme": "Design",
+    "themeLight": "Helles Design",
+    "themeDark": "Dunkles Design",
+    "skin": "Erscheinungsbild",
+    "skinDefault": "Standard",
+    "skinModern": "Modern",
+    "locale": "Sprache",
+    "languageLabels": {
+      "german": "Deutsch",
+      "chinese": "Vereinfachtes Chinesisch",
+      "english": "Englisch"
+    }
+  },
+  "export": {
+    "embed": {
+      "text": "Einbetten",
+      "title": "Einbettungscode",
+      "tip": "Passen Sie nach dem Kopieren die Breite und Höhe des iframes manuell an, um eine optimale Anzeige zu gewährleisten.",
+      "copy": "Kopieren",
+      "copied": "Code in die Zwischenablage kopiert"
+    },
+    "image": {
+      "text": "Bild",
+      "jpg": "JPG",
+      "png": "PNG",
+      "error": {
+        "title": "Fehlermeldung",
+        "message": "Fehler beim Exportieren des Bildes. Bitte versuchen Sie es erneut oder laden Sie die Seite neu."
+      }
+    },
+    "share": {
+      "text": "Teilen",
+      "tip": "Kopieren Sie den Link und senden Sie ihn an die Personen, mit denen Sie teilen möchten.",
+      "copy": "Link kopieren",
+      "copied": "Link in die Zwischenablage kopiert"
+    },
+    "pdf": {
+      "text": "PDF-Dokument",
+      "title": "Als PDF-Dokument exportieren",
+      "message": "Bevor Sie das PDF-Dokument exportieren, stellen Sie bitte sicher, dass alle Bilder auf den Seiten vollständig geladen sind. Wählen Sie dann im Druckdialog 'Als PDF speichern' und klicken Sie auf die Schaltfläche 'Speichern'. Um sicherzustellen, dass alle Inhalte korrekt angezeigt werden, aktivieren Sie im Druckdialogfeld die Option 'Hintergrundgrafiken' und setzen Sie die 'Ränder' auf 'Keine'.",
+      "confirm": "Verstanden"
+    },
+    "text": "Text"
+  },
+  "list": {
+    "bullet": {
+      "text": "Aufzählung",
+      "disc": "Ausgefüllter Kreis",
+      "circle": "Offener Kreis",
+      "square": "Ausgefülltes Quadrat"
+    },
+    "ordered": {
+      "text": "Nummerierte Liste",
+      "property": "Listeneigenschaften",
+      "startAt": "Startnummer:",
+      "decimal": "Zahlen",
+      "decimalLeadingZero": "Zahlen mit führender Null",
+      "lowerRoman": "Römische Ziffern (Kleinbuchstaben)",
+      "upperRoman": "Römische Ziffern (Großbuchstaben)",
+      "lowerLatin": "Alphabet (Kleinbuchstaben)",
+      "upperLatin": "Alphabet (Großbuchstaben)",
+      "tradChineseInformal": "Traditionelle chinesische Zählung",
+      "simpChineseFormal": "Formelle chinesische Zählung (Großbuchstaben)"
+    },
+    "task": {
+      "text": "Aufgabenliste",
+      "split": "Aufgabe hinzufügen",
+      "sink": "In Unteraufgabe umwandeln",
+      "lift": "Als Aufgabe entfernen"
+    }
+  },
+  "colorPicker": {
+    "default": "Standardfarbe",
+    "standard": "Standardfarben",
+    "recent": "Zuletzt verwendet",
+    "more": "Weitere Farben"
+  },
+  "blockMenu": {
+    "insert": "Inhalt einfügen",
+    "template": "Vorlage einfügen",
+    "common": "Häufige Aktionen",
+    "clearFormat": "Formatierung löschen",
+    "duplicate": "Duplizieren",
+    "copy": "Kopieren",
+    "cut": "Ausschneiden",
+    "delete": "Löschen"
+  },
+  "bubbleMenu": {
+    "code": {
+      "copy": {
+        "text": "Code kopieren",
+        "success": "Code in die Zwischenablage kopiert"
+      },
+      "languages": "Sprachen",
+      "lineNumbers": "Zeilennummern anzeigen",
+      "themes": {
+        "text": "Design",
+        "light": "Helles Design",
+        "dark": "Dunkles Design"
+      },
+      "wordWrap": "Zeilenumbruch"
+    },
+    "file": {
+      "autoWidth": "An Breite anpassen",
+      "download": "Datei herunterladen"
+    },
+    "image": {
+      "open": "In einem neuen Fenster öffnen",
+      "draggable": "Bild schwebend",
+      "flipX": "Horizontal spiegeln",
+      "flipY": "Vertikal spiegeln",
+      "preview": "Bildvorschau",
+      "proportion": "Seitenverhältnis sperren",
+      "reset": "Bildposition zurücksetzen",
+      "rotateCC": "Um 90° gegen den Uhrzeigersinn drehen",
+      "rotateC": "Um 90° im Uhrzeigersinn drehen",
+      "convertToNode": "In Block-Bild konvertieren",
+      "convertToInline": "In Inline-Bild konvertieren"
+    },
+    "textBox": {
+      "background": "Hintergrundfarbe",
+      "border": "Rahmeneinstellungen",
+      "borderColor": "Rahmenfarbe",
+      "borderStyle": "Rahmenstil",
+      "noBorder": "Kein Rahmen",
+      "writingMode": "Schreibmodus",
+      "horizontalTb": "Horizontaler Text",
+      "verticalLr": "Vertikaler Text (Links nach Rechts)",
+      "verticalRl": "Vertikaler Text (Rechts nach Links)"
+    },
+    "callout": {
+      "removeEmoji": "Emoji entfernen",
+      "background": "Hintergrundfarbe"
+    },
+    "tag": {
+      "placeholder": "Tag-Name",
+      "content": "Tag-Inhalt",
+      "background": "Hintergrundfarbe",
+      "color": "Textfarbe",
+      "delete": "Tag löschen"
+    },
+    "webpage": {
+      "clickable": "Klickbarkeit umschalten",
+      "open": "In einem neuen Fenster öffnen"
+    },
+    "toFile": "In Datei konvertieren",
+    "delete": "Löschen"
+  },
+  "pageOptions": {
+    "title": "Seiteneinstellungen",
+    "size": {
+      "text": "Seitengröße",
+      "width": "Breite:",
+      "height": "Höhe:",
+      "custom": "Benutzerdefiniert"
+    },
+    "margin": {
+      "text": "Seitenränder",
+      "default": "Standard",
+      "narrow": "Schmal",
+      "moderate": "Mittel",
+      "wide": "Breit",
+      "top": "Oben:",
+      "right": "Rechts:",
+      "bottom": "Unten:",
+      "left": "Links:"
+    }
+  },
+  "document": {
+    "untitled": "Unbenanntes Dokument"
+  },
+  "search": {
+    "text": "Suchen",
+    "title": "Suchen und Ersetzen",
+    "searchText": "Suchen nach...",
+    "replaceText": "Ersetzen durch...",
+    "caseSensitive": "Groß-/Kleinschreibung beachten",
+    "search": "Suchen",
+    "replace": "Ersetzen",
+    "replaceAll": "Alle ersetzen"
+  },
+  "toc": {
+    "title": "Inhaltsverzeichnis",
+    "show": "Inhaltsverzeichnis anzeigen",
+    "hide": "Inhaltsverzeichnis ausblenden",
+    "empty": "Kein Inhaltsverzeichnis verfügbar"
+  },
+  "spellcheck": {
+    "enable": "Rechtschreibprüfung aktivieren",
+    "disable": "Rechtschreibprüfung deaktivieren"
+  },
+  "shortcut": {
+    "title": "Tastenkombinationen",
+    "text": "Text",
+    "commonlyUsed": "Häufig verwendet",
+    "copy": "Kopieren",
+    "paste": "Einfügen",
+    "pasteAsText": "Als unformatierten Text einfügen",
+    "paragraph": "Neuen Absatz einfügen",
+    "hardBreak": "Zeilenumbruch",
+    "format": "Textformatierung",
+    "page": "Seite",
+    "pageZoomIn": "Vergrößern",
+    "pageZoomOut": "Verkleinern",
+    "pageZoomReset": "Zoom auf Standard zurücksetzen",
+    "pageAutoWidth": "An optimale Breite anpassen",
+    "markdown": "Markdown"
+  },
+  "changeLocale": {
+    "title": "Sprache wechseln",
+    "message": "Nach dem Ändern der Sprache wird die Seite neu geladen. Bitte speichern Sie zuerst Ihren Dokumenteninhalt. Sind Sie sicher, dass Sie jetzt wechseln möchten?",
+    "confirm": "Wechseln"
+  },
+  "resetAll": {
+    "title": "Einstellungen zurücksetzen",
+    "message": "Diese Aktion löscht alle Editoreinstellungen sowie den aktuellen Inhalt und lädt die Seite neu. Es wird empfohlen, Ihren Inhalt vor dem Zurücksetzen zu speichern. Sind Sie sicher, dass Sie jetzt zurücksetzen möchten?",
+    "reset": "Zurücksetzen"
+  },
+  "about": {
+    "title": "Über Umo Editor",
+    "poweredBy": "Unterstützt von <a href=\"https://www.umodoc.com/en\" target=\"_blank\">Umodoc</a>",
+    "version": "Version",
+    "openSource": "Open-Source-Edition",
+    "documentation": "Dokumentation",
+    "thanks": "Danke an alle Mitwirkenden",
+    "next": "Erfahren Sie mehr über den leistungsstärkeren <a href=\"https://www.umodoc.com/business\" target=\"_blank\">Umo Editor Next</a>"
+  },
+  "layout": {
+    "web": "Web-Ansicht",
+    "page": "Seitenansicht"
+  },
+  "wordCount": {
+    "characters": "Zeichen",
+    "title": "Dokumentenstatistik",
+    "input": "Eingegebene Zeichen",
+    "selection": "Ausgewählte Zeichen",
+    "limit": "Zeichenlimit"
+  },
+  "preview": {
+    "title": "Präsentation",
+    "disable": "Präsentation beenden",
+    "countdown": {
+      "title": "Countdown einstellen",
+      "select": "Auswählen",
+      "selectTip": "Wählen Sie die Dauer des Countdowns",
+      "custom": "Benutzerdefiniert",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "seconds": "Sekunden",
+      "whenEnd": "Wenn abgelaufen",
+      "showEndMessage": "Endnachricht anzeigen",
+      "exitPreview": "Präsentationsmodus beenden",
+      "start": "Starten",
+      "cancel": "Abbrechen",
+      "1hour": "1 Stunde",
+      "45minutes": "45 Minuten",
+      "30minutes": "30 Minuten",
+      "15minutes": "15 Minuten",
+      "10minutes": "10 Minuten",
+      "5minutes": "5 Minuten",
+      "error": "Bitte stellen Sie eine gültige Countdown-Zeit ein",
+      "endCountdown": "Countdown ist abgelaufen",
+      "remaining": "Verbleibende Zeit"
+    },
+    "laserPointer": "Laserpointer"
+  },
+  "fullscreen": {
+    "title": "Vollbild",
+    "disable": "Vollbildmodus beenden"
+  },
+  "zoom": {
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "level": "Zoomstufe: ",
+    "autoWidth": "An optimale Breite anpassen",
+    "autoWidthError": "Fehler bei der Berechnung der automatischen Seitenbreite",
+    "reset": "Zurück zu 100%"
+  },
+  "node": {
+    "codeBlock": {
+      "menu": "Menü"
+    },
+    "image": {
+      "loading": "Bild wird geladen...",
+      "error": "Bild konnte nicht geladen werden"
+    },
+    "textBox": {
+      "tip": "Doppelklicken zum Bearbeiten"
+    }
+  },
+  "file": {
+    "uploading": "Datei wird hochgeladen...",
+    "preview": "Vorschau",
+    "download": "Datei herunterladen",
+    "limit": "Datei \"{filename}\" überschreitet das Limit von {size}MB",
+    "unknownName": "Unbekannter Name",
+    "unknownSize": "Unbekannte Größe",
+    "notAllow": {
+      "title": "Fehlermeldung",
+      "message": "Das Einfügen dieses Dateityps ist im aktuellen Dokument nicht zulässig."
+    }
+  },
+  "callout": {
+    "placeholder": "Bitte Inhalt eingeben"
+  },
+  "mention": {
+    "noResult": "Keine Ergebnisse"
+  },
+  "save": {
+    "text": "Speichern",
+    "saved": "Gespeichert",
+    "unsaved": "Nicht gespeichert",
+    "network": "Netzwerkstatus:",
+    "online": "Online",
+    "offline": "Offline",
+    "saving": "Dokument wird gespeichert...",
+    "savedAt": "Zuletzt gespeichert:",
+    "savedAtText": "Gespeichert um {time}",
+    "failed": "Fehler beim Speichern des Dokuments",
+    "success": "Dokument erfolgreich gespeichert",
+    "error": "Fehler beim Speichern des Dokuments",
+    "cache": {
+      "text": "Aus dem Cache wiederherstellen",
+      "error": {
+        "title": "Fehlermeldung",
+        "message": "Es befindet sich kein Inhalt im Cache!"
+      }
+    }
+  },
+  "print": {
+    "text": "Drucken",
+    "title": "Dokument drucken",
+    "message": "Bevor Sie das Dokument drucken, stellen Sie bitte sicher, dass alle Bilder auf den Seiten vollständig geladen sind. Um sicherzustellen, dass alle Inhalte korrekt angezeigt werden, aktivieren Sie im Druckdialogfeld die Option 'Hintergrundgrafiken' und setzen Sie die 'Ränder' auf 'Keine'.",
+    "confirm": "Jetzt drucken"
+  },
+  "dialog": {
+    "cancel": "Abbrechen"
+  },
+  "copy": {
+    "notSupported": "Der Browser unterstützt die Kopierfunktion nicht",
+    "copyFailed": "Kopieren fehlgeschlagen"
+  }
+}

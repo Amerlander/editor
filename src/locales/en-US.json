@@ -118,7 +118,11 @@
   "insert": {
     "audio": "Audio",
     "codeBlock": "Code Block",
-    "date": "Chinese Date",
+    "date": "Date",
+    "dateOptions": {
+      "customDate": "Custom date",
+      "customDateTime": "Custom date and time"
+    },
     "emoji": "Emoji",
     "file": "File",
     "hardBreak": "Line Break",
@@ -459,7 +463,12 @@
     "skin": "Appearance",
     "skinDefault": "Default",
     "skinModern": "Modern",
-    "locale": "Language"
+    "locale": "Language",
+    "languageLabels": {
+      "german": "German",
+      "chinese": "Simplified Chinese",
+      "english": "English"
+    }
   },
   "export": {
     "embed": {

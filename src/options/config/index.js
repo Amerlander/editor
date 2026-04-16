@@ -178,6 +178,7 @@ export default {
   extensions: [],
   disableExtensions: [],
   translations: {
+    de_DE: {},
     en_US: {},
     zh_CN: {},
   },

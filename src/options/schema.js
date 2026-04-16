@@ -15,7 +15,7 @@ const isLocale = (value) => {
   }
   if (isRecord(value)) {
     for (const key of Object.keys(value)) {
-      if (!['en_US', 'zh_CN'].includes(key)) {
+      if (!['de_DE', 'en_US', 'zh_CN'].includes(key)) {
         return false
       }
     }
@@ -33,8 +33,10 @@ export default new ObjectSchema({
   locale: {
     merge: 'replace',
     validate(value) {
-      if (value && !['en-US', 'zh-CN'].includes(value)) {
-        throw new Error('Key "locale": must be one of "zh-CN" or "en-US".')
+      if (value && !['de-DE', 'en-US', 'zh-CN'].includes(value)) {
+        throw new Error(
+          'Key "locale": must be one of "zh-CN", "en-US" or "de-DE".',
+        )
       }
     },
     required: false,

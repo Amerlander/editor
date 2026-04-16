@@ -22,7 +22,7 @@
             attrs.format || `YYYY-MM-DD${attrs.withTime ? ' HH:mm:ss' : ''}`
           "
           :enable-time-picker="attrs.withTime"
-          :mode="attrs.format === 'YYYY年M月' ? 'month' : 'date'"
+          :mode="isMonthOnlyFormat(attrs.format) ? 'month' : 'date'"
           need-confirm
           @change="datetimeChange"
         />
@@ -40,6 +40,14 @@ const container = inject('container')
 const options = inject('options')
 const page = inject('page')
 let popupVisible = $ref(false)
+
+const isMonthOnlyFormat = (format) => {
+  if (!format) {
+    return false
+  }
+
+  return !format.includes('D') && !format.includes('d')
+}
 
 const formatDateToChinese = (dateStr) => {
   const replaceDigits = (num) => {

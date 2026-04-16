@@ -558,18 +558,19 @@ watch(
 )
 
 // 多语言
-const langs = [
-  { content: '🇨🇳 简体中文', value: 'zh-CN' },
-  { content: '🇱🇷 English', value: 'en-US' },
-]
+const langs = computed(() => [
+  { content: `🇩🇪 Deutsch`, value: 'de-DE' },
+  { content: `🇨🇳 简体中文`, value: 'zh-CN' },
+  { content: `🇺🇸 English`, value: 'en-US' },
+])
 const setLocale = inject('setLocale')
 
 const lang = computed(
-  () => langs.find((item) => item.value === locale.value)?.content,
+  () => langs.value.find((item) => item.value === locale.value)?.content,
 )
 const changeLang = (dropdownItem) => {
   const { value } = dropdownItem
-  if (lang.value === value) {
+  if (locale.value === value) {
     return
   }
   setLocale(value, false)

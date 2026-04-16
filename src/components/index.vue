@@ -59,6 +59,7 @@ import {
   isRecord,
   isString,
 } from '@tool-belt/type-predicates'
+import 'dayjs/locale/de'
 import domToImage from 'dom-to-image-more'
 import enConfig from 'tdesign-vue-next/esm/locale/en_US'
 import cnConfig from 'tdesign-vue-next/esm/locale/zh_CN'
@@ -490,6 +491,95 @@ const { t, locale, mergeLocaleMessage } = useI18n()
 const $locale = useStorage('umo-editor:locale', options.value.locale)
 locale.value = $locale.value
 consoleCopyright()
+const deConfig = {
+  ...enConfig,
+  calendar: {
+    ...enConfig.calendar,
+    yearSelection: '{year}',
+    monthSelection: '{month}',
+    yearRadio: 'Jahr',
+    monthRadio: 'Monat',
+    hideWeekend: 'Wochenende ausblenden',
+    showWeekend: 'Wochenende anzeigen',
+    today: 'Heute',
+    thisMonth: 'Diesen Monat',
+    week: 'Mo,Di,Mi,Do,Fr,Sa,So',
+    cellMonth: 'Jan,Feb,Mär,Apr,Mai,Jun,Jul,Aug,Sep,Okt,Nov,Dez',
+  },
+  timePicker: {
+    ...enConfig.timePicker,
+    dayjsLocale: 'de',
+    now: 'Jetzt',
+    confirm: 'Bestätigen',
+    anteMeridiem: 'Vormittags',
+    postMeridiem: 'Nachmittags',
+    placeholder: 'Uhrzeit auswählen',
+  },
+  dialog: {
+    ...enConfig.dialog,
+    confirm: 'Bestätigen',
+    cancel: 'Abbrechen',
+  },
+  drawer: {
+    ...enConfig.drawer,
+    confirm: 'Bestätigen',
+    cancel: 'Abbrechen',
+  },
+  popconfirm: {
+    ...enConfig.popconfirm,
+    confirm: {
+      ...enConfig.popconfirm?.confirm,
+      content: 'Bestätigen',
+    },
+    cancel: {
+      ...enConfig.popconfirm?.cancel,
+      content: 'Abbrechen',
+    },
+  },
+  datePicker: {
+    ...enConfig.datePicker,
+    dayjsLocale: 'de',
+    placeholder: {
+      ...enConfig.datePicker?.placeholder,
+      date: 'Datum auswählen',
+      month: 'Monat auswählen',
+      year: 'Jahr auswählen',
+      quarter: 'Quartal auswählen',
+      week: 'Woche auswählen',
+    },
+    weekdays: ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'],
+    months: [
+      'Januar',
+      'Februar',
+      'März',
+      'April',
+      'Mai',
+      'Juni',
+      'Juli',
+      'August',
+      'September',
+      'Oktober',
+      'November',
+      'Dezember',
+    ],
+    quarters: ['1. Quartal', '2. Quartal', '3. Quartal', '4. Quartal'],
+    format: 'DD.MM.YYYY',
+    dayAriaLabel: 'Tag',
+    weekAbbreviation: 'KW',
+    yearAriaLabel: 'Jahr',
+    monthAriaLabel: 'Monat',
+    confirm: 'Bestätigen',
+    selectTime: 'Uhrzeit auswählen',
+    selectDate: 'Datum auswählen',
+    nextYear: 'Nächstes Jahr',
+    preYear: 'Vorheriges Jahr',
+    nextMonth: 'Nächster Monat',
+    preMonth: 'Vorheriger Monat',
+    preDecade: 'Vorheriges Jahrzehnt',
+    nextDecade: 'Nächstes Jahrzehnt',
+    now: 'Jetzt',
+  },
+}
 const getLocaleMessage = (lang) => {
   const translations = options.value.translations?.[lang.replaceAll('-', '_')]
   if (isRecord(translations)) {
@@ -512,6 +602,7 @@ watch(
 
 // Global Locale Config
 const localeConfig = $ref({
+  'de-DE': deConfig,
   'zh-CN': cnConfig,
   'en-US': enConfig,
 })
@@ -803,8 +894,8 @@ const getContent = (format = 'html') => {
 
 // Locale Methods
 const setLocale = (lang, silent = true) => {
-  if (!['zh-CN', 'en-US'].includes(lang)) {
-    throw new Error('"params" must be one of "zh-CN" or "en-US".')
+  if (!['de-DE', 'zh-CN', 'en-US'].includes(lang)) {
+    throw new Error('"params" must be one of "zh-CN", "en-US" or "de-DE".')
   }
   if (locale.value === lang) {
     return

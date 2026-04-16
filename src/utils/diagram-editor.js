@@ -1,6 +1,7 @@
 import { useI18n } from '@/composables/i18n'
 
 const locales = {
+  'de-DE': 'de',
   'zh-CN': 'zh',
   'en-US': 'en',
 }
@@ -63,7 +64,7 @@ class DiagramEditor {
       .map((key) => `${key}=${this.params[key]}`)
       .join('&')
     const { locale } = useI18n()
-    const lang = locales[locale.value]
+    const lang = locales[locale.value] || locales['en-US']
     const frame = document.createElement('iframe')
     frame.setAttribute('class', 'umo-diagrams-iframe')
     frame.setAttribute('src', `${this.domain}?${params}&lang=${lang}`)

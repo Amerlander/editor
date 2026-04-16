@@ -17,12 +17,17 @@ const { locale } = useI18n()
 const themes = computed(() => {
   return [
     {
-      content: '🇨🇳 简体中文',
+      content: `🇩🇪 Deutsch`,
+      value: 'de-DE',
+      active: locale.value === 'de-DE',
+    },
+    {
+      content: `🇨🇳 简体中文`,
       value: 'zh-CN',
       active: locale.value === 'zh-CN',
     },
     {
-      content: '🇱🇷 English',
+      content: `🇺🇸 English`,
       value: 'en-US',
       active: locale.value === 'en-US',
     },

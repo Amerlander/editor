@@ -24,7 +24,6 @@
       "distributed": "分散对齐"
     },
     "bgColor": "字体背景颜色",
-    "bold": "粗体",
     "letterSpacing": {
       "text": "字间距",
       "tip": "当前间距: {value} 字符",
@@ -119,6 +118,10 @@
     "audio": "音频",
     "codeBlock": "代码块",
     "date": "日期",
+    "dateOptions": {
+      "customDate": "自定义日期",
+      "customDateTime": "自定义时间"
+    },
     "emoji": "表情",
     "file": "文件",
     "hardBreak": "换行符",
@@ -458,7 +461,12 @@
     "skin": "外观设置",
     "skinDefault": "默认外观",
     "skinModern": "现代外观",
-    "locale": "语言设置"
+    "locale": "语言设置",
+    "languageLabels": {
+      "german": "德语",
+      "chinese": "简体中文",
+      "english": "英语"
+    }
   },
   "export": {
     "embed": {

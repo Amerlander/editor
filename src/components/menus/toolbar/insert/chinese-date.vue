@@ -12,6 +12,33 @@
 <script setup>
 // 月份
 const formDate = (format) => useDateFormat(useNow(), format).value
+const { locale } = useI18n()
+
+const localDateFormats = computed(() => {
+  if (locale.value === 'de-DE') {
+    return {
+      primaryDate: 'DD.MM.YYYY',
+      primaryDateTime: 'DD.MM.YYYY HH:mm:ss',
+      primaryMonth: 'MM.YYYY',
+    }
+  }
+
+  if (locale.value === 'zh-CN') {
+    return {
+      primaryDate: 'YYYY年M月D日',
+      primaryDateTime: 'YYYY年M月D日 HH:mm:ss',
+      primaryMonth: 'YYYY年M月',
+    }
+  }
+
+  return {
+    primaryDate: 'YYYY-MM-DD',
+    primaryDateTime: 'YYYY-MM-DD HH:mm:ss',
+    primaryMonth: 'YYYY-MM',
+  }
+})
+
+const isChineseLocale = computed(() => locale.value === 'zh-CN')
 
 const formatDateToChinese = (dateStr) => {
   const replaceDigits = (num) => {
@@ -50,53 +77,69 @@ const formatDateToChinese = (dateStr) => {
   })
 }
 
-const options = [
-  { content: '自定义日期', format: 'YYYY-M-D', capitalize: false },
-  {
-    content: '自定义时间',
-    value: 'withTime',
-    format: 'YYYY-M-D HH:mm:ss',
-    capitalize: false,
-    divider: true,
-  },
-  {
-    content: formDate('YYYY年M月D日'),
-    format: 'YYYY年M月D日',
-    capitalize: false,
-  },
-  { content: formDate('YYYY-M-D'), format: 'YYYY-M-D', capitalize: false },
-  { content: formDate('YYYY/M/D'), format: 'YYYY/M/D', capitalize: false },
-  { content: formDate('YYYY.M.D'), format: 'YYYY.M.D', capitalize: false },
-  { content: formDate('YYYY年M月'), format: 'YYYY年M月', capitalize: false },
-  {
-    content: formDate('YYYY年M月D日 HH:mm:ss'),
-    value: 'withTime',
-    format: 'YYYY年M月D日 HH:mm:ss',
-    capitalize: false,
-    divider: true,
-  },
-  {
-    content: formatDateToChinese(formDate('YYYY年M月D日')),
-    format: 'YYYY年M月D日',
-    capitalize: true,
-  },
-  {
-    content: formatDateToChinese(formDate('YYYY年M月')),
-    format: 'YYYY年M月',
-    capitalize: true,
-  },
-]
+const options = computed(() => {
+  const { primaryDate, primaryDateTime, primaryMonth } = localDateFormats.value
+  const baseOptions = [
+    {
+      content: t('insert.dateOptions.customDate'),
+      format: primaryDate,
+      capitalize: false,
+      custom: true,
+    },
+    {
+      content: t('insert.dateOptions.customDateTime'),
+      value: 'withTime',
+      format: primaryDateTime,
+      capitalize: false,
+      custom: true,
+      divider: true,
+    },
+    {
+      content: formDate(primaryDate),
+      format: primaryDate,
+      capitalize: false,
+    },
+    { content: formDate('YYYY-MM-DD'), format: 'YYYY-MM-DD', capitalize: false },
+    { content: formDate('YYYY/MM/DD'), format: 'YYYY/MM/DD', capitalize: false },
+    { content: formDate('YYYY.MM.DD'), format: 'YYYY.MM.DD', capitalize: false },
+    { content: formDate(primaryMonth), format: primaryMonth, capitalize: false },
+    {
+      content: formDate(primaryDateTime),
+      value: 'withTime',
+      format: primaryDateTime,
+      capitalize: false,
+      divider: isChineseLocale.value,
+    },
+  ]
+
+  if (isChineseLocale.value) {
+    baseOptions.push(
+      {
+        content: formatDateToChinese(formDate('YYYY年M月D日')),
+        format: 'YYYY年M月D日',
+        capitalize: true,
+      },
+      {
+        content: formatDateToChinese(formDate('YYYY年M月')),
+        format: 'YYYY年M月',
+        capitalize: true,
+      },
+    )
+  }
+
+  return baseOptions
+})
 
 const editor = inject('editor')
 
-const insertDate = ({ content, format, capitalize, value }) => {
+const insertDate = ({ content, format, capitalize, custom, value }) => {
   if (!content) {
     return
   }
   editor.value
     ?.chain()
     .insertDatetime({
-      text: content.includes('自定义') ? `[${content}]` : content,
+      text: custom ? `[${content}]` : content,
       date: formDate(format), // formDate('YYYY-MM-DD HH:mm:ss'),
       withTime: value === 'withTime',
       format,

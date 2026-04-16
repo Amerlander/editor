@@ -4,6 +4,42 @@ import { useI18n } from '@/composables/i18n'
 import { loadResource } from '@/utils/load-resource'
 
 const locales = {
+  'de-DE': {
+    restart: 'Neu starten',
+    rewind: '{seektime}s zurückspulen',
+    play: 'Abspielen',
+    pause: 'Pausieren',
+    fastForward: '{seektime}s vorspulen',
+    seek: 'Position',
+    seekLabel: '{currentTime} von {duration}',
+    played: 'Abgespielt',
+    buffered: 'Gepuffert',
+    currentTime: 'Aktuelle Zeit',
+    duration: 'Dauer',
+    volume: 'Lautstärke',
+    mute: 'Stummschalten',
+    unmute: 'Stummschaltung aufheben',
+    enableCaptions: 'Untertitel aktivieren',
+    disableCaptions: 'Untertitel deaktivieren',
+    download: 'Herunterladen',
+    enterFullscreen: 'Vollbild aktivieren',
+    exitFullscreen: 'Vollbild verlassen',
+    frameTitle: 'Player für {title}',
+    captions: 'Untertitel',
+    settings: 'Einstellungen',
+    pip: 'Bild-in-Bild',
+    menuBack: 'Zum vorherigen Menü zurück',
+    speed: 'Geschwindigkeit',
+    normal: 'Normal',
+    quality: 'Qualität',
+    loop: 'Schleife',
+    start: 'Start',
+    end: 'Ende',
+    all: 'Alle',
+    reset: 'Zurücksetzen',
+    disabled: 'Deaktiviert',
+    enabled: 'Aktiviert',
+  },
   'zh-CN': {
     restart: '重新播放',
     rewind: '倒退 {seektime} 秒',
@@ -82,7 +118,7 @@ export const player = async (container, cdnUrl) => {
   await loadResource(`${cdnUrl}/libs/plyr/plyr.css`, 'css', 'plyr-style')
   await loadResource(`${cdnUrl}/libs/plyr/plyr.min.js`, 'script', 'plyr-script')
   return new Plyr(container, {
-    i18n: locales[locale.value],
+    i18n: locales[locale.value] || locales['en-US'],
     settings: [],
     tooltips: { controls: true },
     storage: { key: 'umo-editor:player' },
