@@ -1,20 +1,22 @@
 <template>
   <menus-button
-    ico="html5"
-    :text="t('export.html')"
+    ico="markdown"
+    :text="t('export.markdown')"
     huge
-    @menu-click="saveHtmlFile"
+    @menu-click="saveMarkdownFile"
   />
 </template>
 
 <script setup>
 import { saveAs } from 'file-saver'
 
+import { htmlToMarkdown } from '@/utils/html-to-markdown'
+
 const editor = inject('editor')
 const getVanillaHTML = inject('getVanillaHTML', null)
 const options = inject('options')
 
-const saveHtmlFile = async () => {
+const saveMarkdownFile = async () => {
   if (!editor.value) {
     return
   }
@@ -23,13 +25,14 @@ const saveHtmlFile = async () => {
     typeof getVanillaHTML === 'function'
       ? await getVanillaHTML()
       : editor.value.getHTML()
-
-  const blob = new Blob([html], {
-    type: 'text/html;charset=utf-8',
+  const markdown = htmlToMarkdown(html)
+  const blob = new Blob([markdown], {
+    type: 'text/markdown;charset=utf-8',
   })
   const { title } = options.value.document
   const filename =
     title !== '' ? options.value.document?.title : t('document.untitled')
-  saveAs(blob, `${filename}.html`)
+
+  saveAs(blob, `${filename}.md`)
 }
 </script>

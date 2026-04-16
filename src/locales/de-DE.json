@@ -327,6 +327,19 @@
       "edit": "Ablaufplan bearbeiten",
       "loading": "Wird geladen..."
     },
+    "excalidraw": {
+      "text": "Excalidraw",
+      "edit": "Excalidraw bearbeiten",
+      "title": "Excalidraw-Zeichnung",
+      "insert": "Zeichnung einfügen",
+      "update": "Zeichnung aktualisieren",
+      "clear": "Zeichenfläche leeren",
+      "loading": "Excalidraw wird geladen...",
+      "notEmpty": "Die Excalidraw-Zeichnung darf nicht leer sein",
+      "exportError": "Die Excalidraw-Zeichnung konnte nicht exportiert werden",
+      "loadError": "Excalidraw konnte nicht geladen werden",
+      "keepSize": "Beim Aktualisieren die aktuelle Größe beibehalten"
+    },
     "mermaid": {
       "text": "Mermaid",
       "edit": "Mermaid bearbeiten",
@@ -499,6 +512,8 @@
       "message": "Bevor Sie das PDF-Dokument exportieren, stellen Sie bitte sicher, dass alle Bilder auf den Seiten vollständig geladen sind. Wählen Sie dann im Druckdialog 'Als PDF speichern' und klicken Sie auf die Schaltfläche 'Speichern'. Um sicherzustellen, dass alle Inhalte korrekt angezeigt werden, aktivieren Sie im Druckdialogfeld die Option 'Hintergrundgrafiken' und setzen Sie die 'Ränder' auf 'Keine'.",
       "confirm": "Verstanden"
     },
+    "html": "HTML",
+    "markdown": "Markdown",
     "text": "Text"
   },
   "list": {

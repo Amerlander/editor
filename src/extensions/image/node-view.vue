@@ -114,6 +114,34 @@ let selected = $ref(false)
 let maxWidth = $ref(0)
 let maxHeight = $ref(0)
 
+const getElement = (target) => {
+  if (!target) {
+    return null
+  }
+
+  if (target instanceof HTMLElement) {
+    return target
+  }
+
+  if (target.$el instanceof HTMLElement) {
+    return target.$el
+  }
+
+  return null
+}
+
+const getContainerWidth = () => {
+  const containerEl = getElement(containerRef.value)
+  const dragEl = getElement(dragRef)
+  return (
+    containerEl?.clientWidth ||
+    dragEl?.clientWidth ||
+    imageRef?.parentElement?.clientWidth ||
+    imageRef?.clientWidth ||
+    1
+  )
+}
+
 const nodeStyle = $computed(() => {
   const { nodeAlign, margin } = attrs
   const marginTop =
@@ -152,12 +180,33 @@ const uploadImage = async () => {
     })
   }
 }
+
+const getImageRatio = () => {
+  const naturalWidth = imageRef?.naturalWidth
+  const naturalHeight = imageRef?.naturalHeight
+
+  if (naturalWidth && naturalHeight) {
+    return naturalWidth / naturalHeight
+  }
+
+  const { clientWidth = 1, clientHeight = 1 } = imageRef || {}
+  return clientHeight ? clientWidth / clientHeight : 1
+}
+
 const onLoad = async () => {
   // updateAttributes({ error: false })
-  const { clientWidth = 1, clientHeight = 1 } = imageRef
-  const ratio = clientWidth / clientHeight
-  maxWidth = containerRef.value?.$el.clientWidth
+  const ratio = getImageRatio()
+  maxWidth = getContainerWidth()
   maxHeight = maxWidth / ratio
+  if (attrs.equalProportion && attrs.width && attrs.width > maxWidth) {
+    const nextWidth = Number(maxWidth.toFixed(2))
+    const nextHeight = Number((nextWidth / ratio).toFixed(2))
+    updateAttributes({
+      width: nextWidth,
+      height: nextHeight,
+    })
+    return
+  }
   if (attrs.width === null) {
     updateAttributes({ width: maxWidth })
   }
@@ -181,7 +230,7 @@ const onResize = ({ width, height }) => {
 const dragRef = $ref(null)
 let isMousedown = $ref(false)
 const onMousedown = (e) => {
-  containerRef.value?.$el.click()
+  getElement(containerRef.value)?.click()
   if (!attrs.draggable) {
     return
   }
@@ -192,7 +241,11 @@ const onMousedown = (e) => {
   const downY = e.clientY
 
   // 鼠标在盒子里的位置
-  const elRect = dragRef.$el.getBoundingClientRect()
+  const dragEl = getElement(dragRef)
+  if (!dragEl) {
+    return
+  }
+  const elRect = dragEl.getBoundingClientRect()
   const mouseX = downX - elRect.left
   const mouseY = downY - elRect.top
 
@@ -215,8 +268,12 @@ const onMousedown = (e) => {
 const onDragEnd = () => {
   if (!attrs.draggable) {
     setTimeout(() => {
-      dragRef.$el.style.left = 0
-      dragRef.$el.style.top = 0
+      const dragEl = getElement(dragRef)
+      if (!dragEl) {
+        return
+      }
+      dragEl.style.left = 0
+      dragEl.style.top = 0
     }, 100)
   }
 }
@@ -252,9 +309,10 @@ watch(
   async (equalProportion) => {
     await nextTick()
     const width = imageRef?.offsetWidth
-    const height = imageRef?.offsetHeight
+    const ratio = getImageRatio()
+    const height = width && ratio ? width / ratio : imageRef?.offsetHeight
     updateAttributes({ width, height })
-    maxHeight = equalProportion ? maxWidth / (width / height) : 0
+    maxHeight = equalProportion && ratio ? maxWidth / ratio : 0
   },
 )
 watch(

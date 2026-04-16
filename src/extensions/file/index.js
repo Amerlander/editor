@@ -2,6 +2,7 @@ import { mergeAttributes, Node } from '@tiptap/core'
 import { VueNodeViewRenderer } from '@tiptap/vue-3'
 
 import { shortId } from '@/utils/short-id'
+import { compressImageForEmbedding } from '@/utils/file'
 
 import NodeView from './node-view.vue'
 
@@ -49,6 +50,27 @@ const getAccept = (type, accept) => {
     acceptArray = ['notAllow']
   }
   return acceptArray.length === 0 ? '' : acceptArray.toString()
+}
+
+const isSupportedImage = (file) => {
+  return file?.type?.startsWith('image/') && mimeTypes.image.includes(file.type)
+}
+
+const buildEmbeddedImageAttrs = async (file, inline = false) => {
+  const embedded = await compressImageForEmbedding(file)
+  return {
+    id: shortId(10),
+    src: embedded.src,
+    name: embedded.name,
+    type: embedded.type,
+    size: embedded.size,
+    width: embedded.width,
+    height: embedded.height,
+    inline,
+    uploaded: true,
+    previewType: 'image',
+    equalProportion: !inline,
+  }
 }
 
 export default Node.create({
@@ -215,18 +237,29 @@ export default Node.create({
           // 插入文件
           onChange((fileList) => {
             const files = Array.from(fileList)
-            for (const file of files) {
-              bool = editor
-                .chain()
-                .focus()
-                .insertFile({
-                  file,
-                  uploadFileMap,
-                  autoType,
-                  dimensions: { inline: type === 'inlineImage' ? true : false },
-                })
-                .run()
-            }
+            void (async () => {
+              for (const file of files) {
+                if (isSupportedImage(file)) {
+                  const inline = type === 'inlineImage'
+                  const imageAttrs = await buildEmbeddedImageAttrs(file, inline)
+                  bool = inline
+                    ? editor.chain().focus().setInlineImage(imageAttrs).run()
+                    : editor.chain().focus().setImage(imageAttrs).run()
+                  continue
+                }
+
+                bool = editor
+                  .chain()
+                  .focus()
+                  .insertFile({
+                    file,
+                    uploadFileMap,
+                    autoType,
+                    dimensions: { inline: type === 'inlineImage' ? true : false },
+                  })
+                  .run()
+              }
+            })()
           })
           return bool
         },

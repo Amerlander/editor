@@ -327,6 +327,19 @@
       "edit": "Edit Flowchart",
       "loading": "Loading..."
     },
+    "excalidraw": {
+      "text": "Excalidraw",
+      "edit": "Edit Excalidraw",
+      "title": "Excalidraw Drawing",
+      "insert": "Insert Drawing",
+      "update": "Update Drawing",
+      "clear": "Clear Canvas",
+      "loading": "Loading Excalidraw...",
+      "notEmpty": "Excalidraw drawing cannot be empty",
+      "exportError": "Failed to export the Excalidraw drawing",
+      "loadError": "Failed to load Excalidraw",
+      "keepSize": "Keep current size when updating"
+    },
     "mermaid": {
       "text": "Mermaid",
       "edit": "Edit Mermaid",
@@ -499,6 +512,8 @@
       "message": "Before exporting the PDF document, please ensure that all images on the pages have finished loading. Then, in the pop-up print dialog, select 'Printer - Save as PDF', and click the 'Save' button. To ensure that all content is displayed correctly, please check the 'Background graphics' option in the print dialog box and set the 'Margins' to 'None.'",
       "confirm": "I Understand"
     },
+    "html": "HTML",
+    "markdown": "Markdown",
     "text": "Text"
   },
   "list": {

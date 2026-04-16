@@ -326,6 +326,19 @@
       "edit": "编辑流程图",
       "loading": "加载中..."
     },
+    "excalidraw": {
+      "text": "Excalidraw",
+      "edit": "编辑 Excalidraw",
+      "title": "Excalidraw 绘图",
+      "insert": "插入绘图",
+      "update": "更新绘图",
+      "clear": "清空画布",
+      "loading": "Excalidraw 加载中...",
+      "notEmpty": "Excalidraw 绘图不能为空",
+      "exportError": "导出 Excalidraw 绘图失败",
+      "loadError": "Excalidraw 加载失败",
+      "keepSize": "更新时保持当前尺寸"
+    },
     "mermaid": {
       "text": "Mermaid",
       "edit": "编辑 Mermaid",
@@ -497,6 +510,8 @@
       "message": "导出 PDF 文档前，请确保所有页面中的图片已加载完毕。然后在弹出的打印框中选择“打印机 - 另存为PDF”，再点击“保存”按钮即可。为确保所有内容正确显示，请在打印框中勾选 “背景图形”选项，并将 “边距”设为“无”。",
       "confirm": "我知道了"
     },
+    "html": "HTML",
+    "markdown": "Markdown",
     "text": "文本文档"
   },
   "list": {

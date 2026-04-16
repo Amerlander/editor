@@ -159,6 +159,9 @@
           <menus-toolbar-tools-signature v-if="!disableMenu('signature')" />
         </div>
         <div class="umo-virtual-group">
+          <menus-toolbar-tools-excalidraw
+            v-if="!disableMenu('excalidraw')"
+          />
           <menus-toolbar-tools-math v-if="!disableMenu('math')" />
           <menus-toolbar-tools-diagrams v-if="!disableMenu('diagrams')" />
           <menus-toolbar-tools-echarts v-if="!disableMenu('echarts')" />
@@ -224,6 +227,10 @@
         <div class="umo-virtual-group">
           <menus-toolbar-export-image v-if="!disableMenu('export-image')" />
           <menus-toolbar-export-pdf v-if="!disableMenu('export-pdf')" />
+          <menus-toolbar-export-html v-if="!disableMenu('export-html')" />
+          <menus-toolbar-export-markdown
+            v-if="!disableMenu('export-markdown')"
+          />
           <menus-toolbar-export-text v-if="!disableMenu('export-text')" />
         </div>
         <div class="umo-virtual-group">

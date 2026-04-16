@@ -166,12 +166,12 @@ onClickOutside(
   display: flex;
   background-color: var(--umo-button-hover-background);
   padding: 2px 5px;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-content: flex-start;
   border-radius: var(--umo-radius);
   box-sizing: border-box;
   border: solid 1px transparent;
-  white-space: nowrap;
+  padding-right: 32px;
   .card {
     background-color: var(--umo-color-white);
     border: solid 1px var(--umo-border-color-light);
@@ -181,7 +181,8 @@ onClickOutside(
     padding: 5px 10px;
     box-sizing: border-box;
     cursor: pointer;
-    flex: 0 0 68px;
+    flex: 0 0 calc((100% - 12px) / 4);
+    min-width: 0;
     height: 42px;
     &:hover,
     &.active {
@@ -191,6 +192,9 @@ onClickOutside(
       font-size: 14px;
       line-height: 18px;
       font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       &.text {
         font-size: 12px;
         font-weight: 400;
@@ -220,6 +224,9 @@ onClickOutside(
       text-transform: capitalize;
       margin-top: 3px;
       line-height: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
   .arrow {

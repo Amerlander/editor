@@ -11,6 +11,10 @@
     v-if="attrs.type === 'diagrams'"
     :content="attrs.content"
   />
+  <menus-toolbar-tools-excalidraw
+    v-if="attrs.type === 'excalidraw'"
+    :content="attrs.content"
+  />
   <menus-toolbar-tools-mermaid
     v-if="attrs.type === 'mermaid'"
     :content="attrs.content"

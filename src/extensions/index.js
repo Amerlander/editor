@@ -27,7 +27,7 @@ import StarterKit from '@tiptap/starter-kit'
 
 import { l } from '@/composables/i18n'
 import { useState } from '@/composables/state'
-import { getImageDimensions } from '@/utils/file'
+import { compressImageForEmbedding, getImageDimensions } from '@/utils/file'
 import { shortId } from '@/utils/short-id'
 
 import Audio from './audio'
@@ -108,6 +108,22 @@ const nodeTypes = [
   'blockMath',
   'inlineMath',
 ]
+
+const buildEmbeddedImageNode = async (file) => {
+  const embedded = await compressImageForEmbedding(file)
+  return {
+    id: shortId(10),
+    src: embedded.src,
+    name: embedded.name,
+    type: embedded.type,
+    size: embedded.size,
+    width: embedded.width,
+    height: embedded.height,
+    uploaded: true,
+    previewType: 'image',
+    equalProportion: true,
+  }
+}
 
 export const getDefaultExtensions = ({ container, options, uploadFileMap }) => {
   const { page, document: doc, users, file, disableExtensions } = options.value
@@ -258,6 +274,12 @@ export const getDefaultExtensions = ({ container, options, uploadFileMap }) => {
         )
         const scrollTop = pageContainer?.scrollTop || 0
         for (const file of files) {
+          if (file?.type?.startsWith('image/')) {
+            const imageAttrs = await buildEmbeddedImageNode(file)
+            editor.chain().focus().setImage(imageAttrs).run()
+            continue
+          }
+
           const dimensions = await getImageDimensions(file)
           editor.commands.insertFile({
             file,
@@ -276,6 +298,15 @@ export const getDefaultExtensions = ({ container, options, uploadFileMap }) => {
       },
       async onDrop(editor, files, pos) {
         for (const file of files) {
+          if (file?.type?.startsWith('image/')) {
+            const imageAttrs = await buildEmbeddedImageNode(file)
+            editor.commands.insertContentAt(pos || editor.state.selection.anchor, {
+              type: 'image',
+              attrs: imageAttrs,
+            })
+            continue
+          }
+
           const dimensions = await getImageDimensions(file)
           editor.commands.insertFile({
             file,

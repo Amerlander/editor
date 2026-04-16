@@ -114,6 +114,110 @@ export const getImageDimensions = (file) => {
   }
 }
 
+export const fileToDataURL = (file) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(reader.result)
+    reader.onerror = () => reject(reader.error || new Error('Failed to read file'))
+    reader.readAsDataURL(file)
+  })
+}
+
+const loadImageElement = (file) => {
+  return new Promise((resolve, reject) => {
+    const objectUrl = URL.createObjectURL(file)
+    const image = new Image()
+
+    image.onload = () => {
+      URL.revokeObjectURL(objectUrl)
+      resolve(image)
+    }
+
+    image.onerror = () => {
+      URL.revokeObjectURL(objectUrl)
+      reject(new Error('Failed to decode image'))
+    }
+
+    image.src = objectUrl
+  })
+}
+
+const replaceExtension = (filename, nextExtension) => {
+  const basename = filename?.replace(/\.[^.]+$/, '') || 'image'
+  return `${basename}.${nextExtension}`
+}
+
+export const compressImageForEmbedding = async (
+  file,
+  { maxWidth = 600, mimeType = 'image/webp', quality = 0.6 } = {},
+) => {
+  const { width, height } = await getImageDimensions(file)
+
+  if (!width || !height) {
+    const src = await fileToDataURL(file)
+    return {
+      src,
+      width: 0,
+      height: 0,
+      type: file.type,
+      size: file.size,
+      name: file.name,
+    }
+  }
+
+  const scale = width > maxWidth ? maxWidth / width : 1
+  const targetWidth = Math.max(1, Math.round(width * scale))
+  const targetHeight = Math.max(1, Math.round(height * scale))
+
+  const image = await loadImageElement(file)
+  const canvas = document.createElement('canvas')
+  canvas.width = targetWidth
+  canvas.height = targetHeight
+
+  const context = canvas.getContext('2d', { alpha: true })
+  if (!context) {
+    const src = await fileToDataURL(file)
+    return {
+      src,
+      width: targetWidth,
+      height: targetHeight,
+      type: file.type,
+      size: file.size,
+      name: file.name,
+    }
+  }
+
+  context.drawImage(image, 0, 0, targetWidth, targetHeight)
+
+  const blob = await new Promise((resolve) => {
+    canvas.toBlob(resolve, mimeType, quality)
+  })
+
+  if (!blob) {
+    return {
+      src: canvas.toDataURL(mimeType, quality),
+      width: targetWidth,
+      height: targetHeight,
+      type: mimeType,
+      size: file.size,
+      name: replaceExtension(file.name, 'webp'),
+    }
+  }
+
+  const embeddedFile = new File([blob], replaceExtension(file.name, 'webp'), {
+    type: mimeType,
+  })
+
+  return {
+    src: await fileToDataURL(embeddedFile),
+    width: targetWidth,
+    height: targetHeight,
+    type: mimeType,
+    size: blob.size,
+    name: embeddedFile.name,
+  }
+}
+
 export const dataURLToFile = (dataURL, name) => {
   if (!dataURL || !dataURL.startsWith('data:')) {
     throw new Error('Invalid dataURL')
