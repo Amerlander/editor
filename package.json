@@ -49,6 +49,7 @@
   },
   "scripts": {
     "build": "vite build",
+    "build:site": "vite build --mode site",
     "dev": "vite --port 9000 --open --force",
     "format": "oxfmt --write .",
     "lint": "oxlint --fix src",
