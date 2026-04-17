@@ -3,7 +3,7 @@ import defaultDicts from './dicts'
 // 默认配置
 export default {
   editorKey: 'default',
-  locale: 'zh-CN',
+  locale: 'de-DE',
   theme: 'light',
   skin: 'default',
   height: '100%',
