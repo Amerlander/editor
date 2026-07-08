@@ -694,7 +694,7 @@
     "title": "About Editor",
     "version": "Version",
     "openSource": "open-source edition",
-    "forkNotice": "This is a fork of Umo Editor (umodoc/editor).",
+    "forkNotice": "This is a fork of <a href=\"https://github.com/umodoc/editor\" target=\"_blank\">Umo Editor</a> — © umo-team, MIT License.",
     "thanks": "Thanks to all contributors"
   },
   "layout": {

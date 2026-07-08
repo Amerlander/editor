@@ -22,12 +22,10 @@
       <p>
         {{ t('about.version') }}: v{{ version }} ({{ t('about.openSource') }})
       </p>
-      <p>
-        <a href="https://github.com/umodoc/editor" target="_blank">Github</a>
-      </p>
-      <p style="font-size: 12px; text-align: center">
-        {{ t('about.forkNotice') }}
-      </p>
+      <p
+        style="font-size: 12px; text-align: center"
+        v-html="t('about.forkNotice')"
+      ></p>
       <t-divider>{{ t('about.thanks') }}</t-divider>
       <p style="text-align: center; font-size: 12px; padding: 0 10px">
         <a href="https://github.com/Cassielxd" target="_blank">Cassielxd</a>

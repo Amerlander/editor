@@ -692,7 +692,7 @@
     "title": "关于编辑器",
     "version": "当前版本",
     "openSource": "开源版",
-    "forkNotice": "本项目基于 Umo Editor (umodoc/editor) 进行二次开发。",
+    "forkNotice": "本项目基于 <a href=\"https://github.com/umodoc/editor\" target=\"_blank\">Umo Editor</a> 进行二次开发 — © umo-team，MIT 许可证。",
     "thanks": "感谢每一位贡献者"
   },
   "wordCount": {
